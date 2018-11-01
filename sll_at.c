@@ -191,6 +191,7 @@ int main(/* arguments */) {
       :return null
  */
   int ch;
+  printf("Enter only integer value\n");
   while (1) {
     /* code */
     printf("Enter 1:insert at beginning 2:insert at given position 3:insert ascending order 4:search 5:display any other to exit\n" );

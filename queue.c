@@ -129,6 +129,7 @@ int main() {
   :return NULL
   */
   int ch;
+  printf("Enter only integer value\n");
   printf("Enter the maximun size of queue\n" );
   scanf("%d",&max );
   while (1) {

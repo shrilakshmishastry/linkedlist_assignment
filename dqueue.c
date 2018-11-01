@@ -176,10 +176,10 @@ int main() {
   :return (void)
   */
   int ch;
-
+  printf("Enter only integer value\n");
   while (1) {
     /* code */
-    printf("Enter 1:insert at rearer end 2:insert at front end 3:delete at rear end 4:delete at front 5:display any other to exit\n");
+    printf("Enter 1:insert at rearer end\n 2:insert at front end\n 3:delete at rear end\n 4:delete at front \n 5:display \nany other to exit\n");
     scanf("%d",&ch );
     switch (ch) {
       case /* value */1:

@@ -36,10 +36,10 @@ NODE insert_beg(NODE ptr) {
 }
 
 void concate(){
-  """
+  /*
     Function to concat two list.
     return void
-  """
+  */
   NODE tmp;
 
   printf("Elements after concatination of two list\n" );

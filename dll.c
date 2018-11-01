@@ -88,9 +88,10 @@ void list_len()
 int main() {
   /* code */
   int ch;
+  printf("Enter only integer value\n");
   while (1) {
     /* code */
-    printf("Enter 1:insert at the front 2:delete at the front 3:display any other to exit\n" );
+    printf("Enter 1:insert at the front \n 2:delete at the front\n 3:display \n any other integer to exit\n" );
     scanf("%d",&ch );
     switch (ch) {
       case /* value */1:insert_front();
