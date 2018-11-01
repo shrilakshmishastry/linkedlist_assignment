@@ -1,11 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// structure to doubly linked list
+// structure to singly linked list
 struct node{
   int data;
   struct node * next;
-  struct node * pre;
 };
 
 typedef struct node * Node;
@@ -23,7 +22,6 @@ Node get_node(/* arguments */) {
   printf("Enter the data for node\n");
   scanf("%d",&tmp->data );
   tmp->next = NULL;
-  tmp->pre = NULL;
   return tmp;
 }
 
@@ -39,7 +37,6 @@ void insert_beg(/* arguments */) {
   }
   else{
     tmp->next = head;
-    head->pre = tmp;
     head = tmp;
   }
 
@@ -63,13 +60,11 @@ void insert(){
   }
   else if(pos == 1 && head->next == NULL){
     tmp->next = head;
-    head->pre = tmp;
     head = tmp;
 
   }
   else if (pos == 1){
     tmp->next = head;
-    head->pre =tmp;
     head =tmp;
   }
   else{
@@ -84,7 +79,6 @@ void insert(){
     }
     if(k){
       tmp->next=var->next;
-      var->next->pre = tmp;
       var->next=tmp;
     }
     else{
@@ -118,7 +112,7 @@ void search() {
   */
   Node tmp;
   int c=0,f=0;
-  int var,test;
+  int var;
   printf("Enter the element to find\n");
   scanf("%d",&var );
   if (head == NULL) {
@@ -159,6 +153,7 @@ void insert_ascendingorder(/* arguments */) {
   */
   Node tmp = get_node();
   Node var,test;
+
   if(head == NULL){
 
     head =tmp;
@@ -166,18 +161,15 @@ void insert_ascendingorder(/* arguments */) {
   else if(head->next == NULL){
     if(head->data > tmp->data){
       tmp->next = head;
-      head->pre = tmp;
       head = tmp;
 
     }
     else{
       head->next = tmp;
-      tmp->pre =head;
     }
   }
   else{
     tmp->next = head;
-    head->pre = tmp;
     head = tmp;
     for(var=head;var;var=var->next){
       for(test=head; test->next!=NULL;test=test->next){
@@ -187,10 +179,9 @@ void insert_ascendingorder(/* arguments */) {
       }
     }
 
-    }
+    display();
   }
-
-
+}
 
 
 int main(/* arguments */) {
