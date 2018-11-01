@@ -22,7 +22,7 @@ Node rear = NULL;
 Node front = NULL;
 
 // a counter to nodes
-int c =0,max_size;
+
 
 Node get_node(/* arguments */) {
   /*
@@ -39,35 +39,7 @@ Node get_node(/* arguments */) {
   return tmp;
 }
 
-int is_full(/* arguments */) {
-  /*
-    Function to check the space availability of queue
-    :param NULL
-    :return (Boolean) True  :if queue is full else False
 
-  */
-  if(c == max_size){
-    return 1;
-  }
-  else{
-    return 0;
-  }
-
-}
-
-int is_empty(){
-  /*
-      Function to determine whether queue is empty
-  :param NULL
-  :return (Boolean) True:if queue is empty else False
-  */
-  if(c == 0){
-    return 1;
-  }
-  else{
-    return 0;
-  }
-}
 
 void insert_front(/* arguments */) {
   /*
@@ -79,14 +51,14 @@ void insert_front(/* arguments */) {
   if(front == NULL){
     front = tmp;
     rear = tmp;
-    c++;
+
   }
   else{
     front -> pre = tmp;
     tmp -> next = front;
     front = tmp;
     printf("%d\n",front->data );
-    c++;
+
   }
 
 }
@@ -101,13 +73,13 @@ void insert_rear(/* arguments */) {
   if(rear == NULL){
     rear = tmp;
     front = tmp;
-    c++;
+
   }
   else{
     rear -> next = tmp;
     tmp -> pre = rear;
     rear = tmp;
-    c++;
+
   }
 }
 
@@ -126,7 +98,7 @@ void dele_front(/* arguments */) {
     printf("%d\n",front->data );
     front = NULL;
     rear = NULL;
-    c--;
+
   }
   else{
     tmp = front;
@@ -134,7 +106,7 @@ void dele_front(/* arguments */) {
     printf("The data of the node deleted is\n" );
     printf("%d\n",tmp->data );
     free(tmp);
-    c--;
+
   }
 
 }
@@ -156,7 +128,7 @@ void dele_rear(){
     printf("%d\n",rear->data );
     rear = NULL;
     front = NULL;
-    c--;
+
 
   }
   else{
@@ -165,7 +137,7 @@ void dele_rear(){
     printf("The data of the node deleted is\n" );
     printf("%d\n",tmp->data );
     free(tmp);
-    c--;
+
   }
 
 
@@ -204,8 +176,7 @@ int main() {
   :return (void)
   */
   int ch;
-  printf("enter the size of the queue\n");
-  scanf("%d",&max_size );
+
   while (1) {
     /* code */
     printf("Enter 1:insert at rearer end 2:insert at front end 3:delete at rear end 4:delete at front 5:display any other to exit\n");
@@ -221,7 +192,7 @@ int main() {
         break;
       case   3:
         dele_rear();
-        
+
         break;
       case  4:
         dele_front();
